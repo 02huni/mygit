@@ -1,0 +1,11 @@
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    float:left;
+}
+a{
+    display: block;
+    padding: 10px 20px;
+    background-color: #ccc;
+}

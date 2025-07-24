@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumMulti(userNum1,userNum2){
+        if(userNum1==userNum2){
+            var mul=userNum1*userNum2
+            return document.write("같으므로 두수의 곱은: "+mul);
+        }
+        else {
+            var sum=userNum1+userNum2
+            return document.write("같지 않으므로 두수의 합은:"+sum);
+        }
+        }
+        var userNum1= prompt("처음 수를 입력하세요:");
+        var userNum2= prompt("두번째 수를 입력하세요:");
+        userNum1=parseInt(userNum1);
+        userNum2=parseInt(userNum2);
+        sumMulti(userNum1,userNum2)
+    </script>
+</body>
+</html>

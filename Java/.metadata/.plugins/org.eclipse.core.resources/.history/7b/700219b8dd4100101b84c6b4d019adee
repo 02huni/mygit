@@ -1,0 +1,10 @@
+package diagram;
+
+public class DishWasher extends HomeAppliances{
+	public void turnOn() {
+		
+	}
+	public void turnOff() {
+		
+	}
+}

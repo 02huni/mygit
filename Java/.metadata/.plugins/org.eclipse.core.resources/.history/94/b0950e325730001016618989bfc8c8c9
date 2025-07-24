@@ -1,0 +1,31 @@
+package project1;
+
+public class Sort {
+	
+	public static void main(String[] args) {
+		int[] a = { 69, 10, 30, 2, 16, 8, 31, 22 };
+		int n = 8;
+		int temp = 0;
+		int tempidx = 0;
+		for (int i = 0; i < n; i++) {
+			tempidx = i;
+			temp = a[i];
+			for (int j = i; j < n; j++) {
+				// a[i]..a[n-1] 중 가장 작은원소a[k], a[i]와 교체
+				if (a[j] < temp) {
+					tempidx = j;
+					temp=a[j];
+				}
+			}
+			
+			a[tempidx] = a[i];
+			a[i]= temp ;
+			System.out.print(i+"단계: ");
+			for (int k = 0; k < n; k++) {
+				System.out.print(a[k] + "\t");
+			}
+			System.out.println("");
+
+		}
+	}
+}

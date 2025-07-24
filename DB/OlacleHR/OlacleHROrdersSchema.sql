@@ -1,0 +1,44 @@
+--------------------------------------------------------
+--  颇老捞 积己凳 - 格夸老-7岿-24-2025   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table ORDERS
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."ORDERS" 
+   (	"ORDERID" NUMBER(2,0), 
+	"CUSTID" NUMBER(2,0), 
+	"BOOKID" NUMBER(2,0), 
+	"SALEPRICE" NUMBER(8,0), 
+	"ORDERDATE" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C006999
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "HR"."SYS_C006999" ON "HR"."ORDERS" ("ORDERID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table ORDERS
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."ORDERS" ADD PRIMARY KEY ("ORDERID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ORDERS
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."ORDERS" ADD FOREIGN KEY ("CUSTID")
+	  REFERENCES "HR"."CUSTOMER" ("CUSTID") ENABLE;
+  ALTER TABLE "HR"."ORDERS" ADD FOREIGN KEY ("BOOKID")
+	  REFERENCES "HR"."BOOK" ("BOOKID") ENABLE;
